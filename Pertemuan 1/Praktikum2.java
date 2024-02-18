@@ -4,7 +4,7 @@ public class Praktikum2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input NIM : ");
-        long nim = sc.nextLong();
+        String nim = sc.nextLine();
         System.out.println("======================");
         long n = nim%100;
         System.out.println("n "+n);
