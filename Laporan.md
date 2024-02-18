@@ -4,6 +4,7 @@
 <img src="Praktikum1.1.png">
 
 ## Praktikum 2 Perulangan
+<img src="Praktikum1.2.png">
 
 ## Praktikum 3 Array
 <img src="Praktikum1.3.png">
