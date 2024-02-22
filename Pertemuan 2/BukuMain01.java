@@ -22,5 +22,12 @@ public class BukuMain01 {
         bk2.hitungDiskon();
         bk2.hitungHarga();
         bk2.tampilInformasi();
+
+        Buku01 bukuAaisyah = new Buku01("Koala Kumal", "Raditya Dika", 250, 15, 74400);
+        bukuAaisyah.terjual(10);
+        bukuAaisyah.hitungHargaTotal(5);
+        bukuAaisyah.hitungDiskon();
+        bukuAaisyah.hitungHarga();
+        bukuAaisyah.tampilInformasi();
     }
 }
