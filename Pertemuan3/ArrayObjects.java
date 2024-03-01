@@ -1,8 +1,11 @@
 import java.util.Scanner;
 public class ArrayObjects {
     public static void main(String[] args) {
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Masukkan jumlah persegi panjang: ");
+        int jumlahPersegiPanjang = sc.nextInt();
+        PersegiPanjang[] ppArray = new PersegiPanjang[jumlahPersegiPanjang];
 
         for(int i = 0; i < 3; i++){
             ppArray[i] = new PersegiPanjang();
