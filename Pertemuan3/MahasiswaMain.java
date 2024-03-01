@@ -18,9 +18,21 @@ public class MahasiswaMain {
             sc.nextLine();
         }
         
-        for(int i = 0; i < 3; i++){
-                System.out.println("Data Mahasiswa ke-" + (i+1));
-                System.out.println("Nama: " + mhsArray[i].nama + "\nNIM: " + mhsArray[i].NIM + "\nJenis Kelamin: " + mhsArray[i].gender + "\nNilai IPK: " + mhsArray[i].IPK);
-            }    
+        Mahasiswa mhs = new Mahasiswa();
+        mhs.tampilData(mhsArray);
+        System.out.print("\n");
+
+        double rataRata = mhs.hitungrataRata(mhsArray);
+        System.out.println("-------------------------------------");
+        System.out.printf("%-30s : %-4.2f","Rata-rata IPK mahasiswa adalah", rataRata);
+        System.out.print("\n");
+
+        double ipkBesar = mhs.cariIPKTerbesar(mhsArray);
+        System.out.println("-------------------------------------");
+        System.out.println("IPK mahasiswa Terbesar adalah : "+ ipkBesar);
+        System.out.println("-------------------------------------");
+
+        sc.close();
+ 
     }
 }
