@@ -1,7 +1,9 @@
 # Laporan Praktikum Pertemuan 5
 
 Nama            : Aaisyah Nursalsabiil Ni Patriarti
+
 NIM             : 2341720171
+
 Kelas / absen   : 1H - TI / 01
 
 ## 4.2 Menghitung Nilai Faktorial dengan Algoritma Brute Force dan Divide and Conquer
