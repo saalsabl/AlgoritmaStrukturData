@@ -22,5 +22,4 @@ public class MainLatihan {
         double averagePower = latihan.calculateAveragePower();
         System.out.println("Rata-rata Top Power: " + averagePower);
     }
-    
 }
