@@ -10,7 +10,6 @@ public class MainFaktorial {
         for (int i = 0; i < iJml; i++){
             fk[i] = new Faktorial();
             System.out.println("masukkan nilai data ke-" + (i+1)+" : ");
-            // int iNilai = sc.nextInt();
             fk[i].nilai = sc.nextInt();
         }
         System.out.println("HASIL - BRUTE FORCE");
