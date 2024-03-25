@@ -20,9 +20,14 @@ public class Main {
         list.bubbleSort();
         list.tampil();
 
-        //Percobaan 2
+        // Percobaan 2
         System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
         list.selectionSort();
+        list.tampil();
+
+        // Percobaan 3
+        System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
+        list.insertionSort();
         list.tampil();
     }
 }
