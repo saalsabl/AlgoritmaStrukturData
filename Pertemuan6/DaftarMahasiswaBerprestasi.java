@@ -6,7 +6,7 @@ public class DaftarMahasiswaBerprestasi {
         if(idx<listMhs.length){
             listMhs[idx] = m;
             idx++;
-        }else{
+        } else {
             System.out.println("Data sudah penuh!!");
         }
     }
@@ -14,22 +14,23 @@ public class DaftarMahasiswaBerprestasi {
     void tampil(){
         for(Mahasiswa m : listMhs){
             m.tampil();
-            System.out.println("--------------------------------");
+            System.out.println("----------------------------");
         }
     }
 
     void bubbleSort(){
-        for(int i = 0; i < listMhs.length - 1; i++){
-            for(int j = 1; j < listMhs.length - i; j++){
+        for(int i = 0; i<listMhs.length-i; i++){
+            for(int j = 1; j<listMhs.length-i; j++){
                 if(listMhs[j].ipk > listMhs[j-1].ipk){
-                    Mahasiswa tmp = listMhs[j-1];
+
+                    Mahasiswa tmp = listMhs[j];
                     listMhs[j] = listMhs[j-1];
                     listMhs[j-1] = tmp;
                 }
             }
         }
     }
-    // Percobaan 2
+
     void selectionSort(){
         for(int i = 0; i < listMhs.length-1; i++){
             int idxMin = i;
@@ -43,13 +44,13 @@ public class DaftarMahasiswaBerprestasi {
             listMhs[i] = tmp;
         }
     }
-    // Percobaan 3
+
     void insertionSort(){
         for(int i = 1; i < listMhs.length; i++){
             Mahasiswa tmp = listMhs[i];
             int j = i;
-            while (j > 0 && listMhs[j - 1].ipk > tmp.ipk){
-                listMhs[j] = listMhs[j - 1];
+            while (j > 0 && listMhs[j-1].ipk > tmp.ipk){
+                listMhs[j] = listMhs[j-1];
                 j--;
             }
             listMhs[j] = tmp;

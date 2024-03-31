@@ -13,19 +13,17 @@ public class Main {
         list.tambah(m4);
         list.tambah(m5);
 
-        System.out.println("Data mahasiswa sebelum sorting = ");
+        System.out.println("Data mahasiswa sebelum sorting =");
         list.tampil();
 
         System.out.println("Data mahasiswa setelah sorting desc berdasarkan ipk");
         list.bubbleSort();
         list.tampil();
 
-        // Percobaan 2
         System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
         list.selectionSort();
         list.tampil();
 
-        // Percobaan 3
         System.out.println("Data mahasiswa setelah sorting asc berdasarkan ipk");
         list.insertionSort();
         list.tampil();
