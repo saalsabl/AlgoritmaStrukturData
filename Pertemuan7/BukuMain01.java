@@ -20,7 +20,7 @@ public class BukuMain01 {
             int tahunTerbit = s.nextInt();
             System.out.print("Pengarang \t: ");
             String pengarang = s1.nextLine();
-            System.out.print("Stock \t: ");
+            System.out.print("Stock \t        : ");
             int stock = s.nextInt();
 
             Buku01 m = new Buku01(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
@@ -30,9 +30,9 @@ public class BukuMain01 {
         System.out.println("Data keseluruhan Buku : ");
         data.tampil();
         System.out.println("--------------------------------------------------");
-        System.out.println("Pencarian Data : ");
-        System.out.println("Masukkan Kode Buku yang dicari: ");
-        System.out.print("Kode Buku : ");
+        System.out.println("Pencarian Data                  : ");
+        System.out.println("Masukkan Kode Buku yang dicari  : ");
+        System.out.print("Kode Buku                         : ");
         String cari = s1.nextLine();
         System.out.println("Menggunakan sequential Search");
         int posisi = data.FindSeqSearch(cari);

@@ -19,7 +19,7 @@ public class Buku01 {
         System.out.println("Tahun Terbit: " + tahunTerbit);
         System.out.println("Pengarang : " + pengarang);
         System.out.println("Stock: " + stock);
-
+ 
     }
 }
 

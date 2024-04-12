@@ -69,6 +69,6 @@ public class PencarianBuku01 {
             return FindBinarySearch(cari, mid + 1, right); 
         }
         }
-        return -1;
+        return -1; 
     }
 }
