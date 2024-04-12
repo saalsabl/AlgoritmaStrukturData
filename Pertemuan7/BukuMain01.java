@@ -26,13 +26,15 @@ public class BukuMain01 {
             Buku01 m = new Buku01(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
             data.tambah(m);
         }
+        data.bubbleSort();
         System.out.println("--------------------------------------------------");
         System.out.println("Data keseluruhan Buku : ");
         data.tampil();
         System.out.println("--------------------------------------------------");
-        System.out.println("Pencarian Data                  : ");
-        System.out.println("Masukkan Kode Buku yang dicari  : ");
-        System.out.print("Kode Buku                         : ");
+        System.out.println("--------------------------------------------------");
+        System.out.println("Pencarian Data                   : ");
+        System.out.println("Masukkan Judul Buku yang dicari  : ");
+        System.out.print("Judul Buku                         : ");
         String cari = s1.nextLine();
         System.out.println("Menggunakan sequential Search");
         int posisi = data.FindSeqSearch(cari);
@@ -43,13 +45,13 @@ public class BukuMain01 {
         if (dataBuku != null){
             dataBuku.tampilDataBuku();
         } else {
-            System.out.println("Buku dengan kode " + cari + " tidak ditemukan.");
+            System.out.println("Buku dengan judul " + cari + " tidak ditemukan.");
         }
 
         // Percobaan 2
         System.out.println("======================");
         System.out.println("menggunakan binary search");
-        posisi = data.FindBinarySearch(cari, 0, jumBuku - 1);
+        posisi = data.FindBinarySearch(cari);
         data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
         
