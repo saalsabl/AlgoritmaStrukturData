@@ -1,17 +1,18 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 //Percobaan1 
 public class PencarianBuku01 {
     Buku01 listBk[] = new Buku01[5];
-        int idx;
+    int idx;
         
-        void tambah(Buku01 m){
-            if (idx < listBk.length){
-                listBk[idx] = m;
-                idx++;
-            } else {
-                System.out.println("Data sudah penuh!");
-            }
+    void tambah(Buku01 m){
+        if (idx < listBk.length){
+            listBk[idx] = m;
+            idx++;
+        } else {
+            System.out.println("Data sudah penuh!");
         }
+    }
 
     void tampil() {
         for (Buku01 m : listBk){
@@ -86,5 +87,60 @@ public class PencarianBuku01 {
             }
         }
         return -1;
+    }
+
+    // Method untuk menembukan semua posisi judul buku yang dicari menggunakan sequential search
+    public ArrayList<Integer> FindAllSeqSearch(String cari){
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int j = 0; j < idx; j++){
+            if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                positions.add(j);
+            }
+        }
+        return positions;
+    }
+
+    // Method untuk menemukan semua posisi judul buku yang dicari menggunakan binary search
+    public ArrayList<Integer> FindAllBinarySearch(String cari){
+        ArrayList<Integer> positions = new ArrayList<>();
+        bubbleSort();
+        int left = 0;
+        int right = idx - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int result = listBk[mid].judulBuku.compareToIgnoreCase(cari);
+            if (result == 0) {
+                positions.add(mid);
+                // Cek apakah ada kemungkinan hasil yang sama di sebelah kiri
+                int temp = mid - 1;
+                while (temp >= left && listBk[temp].judulBuku.equalsIgnoreCase(cari)) {
+                    positions.add(temp);
+                    temp--;
+                }
+                // Cek apakah ada kemungkinan hasil yang sama di sebelah kanan
+                temp = mid + 1;
+                while (temp <= right && listBk[temp].judulBuku.equalsIgnoreCase(cari)) {
+                    positions.add(temp);
+                    temp++;
+                }
+                return positions;
+            } else if (result < 0) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return positions;
+    }
+    // Method untuk menampilkan data jika hasil pencarian memiliki lebih dari satu hasil
+    public void TampilMultipleData (String x, ArrayList<Integer>positions){
+        if (positions.size() > 1) {
+            System.out.println("Peringatan!! Judul Buku : " + x + "terdapat di indeks " + positions);
+        }
+        for (int pos : positions) {
+            Tampilposisi(x, pos);
+            TampilData(x, pos);
+        }
     }
 }

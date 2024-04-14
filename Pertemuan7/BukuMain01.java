@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BukuMain01 {
@@ -26,10 +27,12 @@ public class BukuMain01 {
             Buku01 m = new Buku01(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
             data.tambah(m);
         }
+
         data.bubbleSort();
         System.out.println("--------------------------------------------------");
         System.out.println("Data keseluruhan Buku : ");
         data.tampil();
+
         System.out.println("--------------------------------------------------");
         System.out.println("--------------------------------------------------");
         System.out.println("Pencarian Data                   : ");
@@ -37,21 +40,13 @@ public class BukuMain01 {
         System.out.print("Judul Buku                         : ");
         String cari = s1.nextLine();
         System.out.println("Menggunakan sequential Search");
-        int posisi = data.FindSeqSearch(cari);
-        data.Tampilposisi(cari, posisi);
-        data.TampilData(cari, posisi);
-
-        Buku01 dataBuku = data.FindBuku(cari);
-        if (dataBuku != null){
-            dataBuku.tampilDataBuku();
-        } else {
-            System.out.println("Buku dengan judul " + cari + " tidak ditemukan.");
-        }
+        ArrayList<Integer> positions = data.FindAllSeqSearch(cari);
+        data.TampilMultipleData(cari, positions);
 
         // Percobaan 2
         System.out.println("======================");
-        System.out.println("menggunakan binary search");
-        posisi = data.FindBinarySearch(cari);
+        System.out.println("Menggunakan binary search");
+        int posisi = data.FindBinarySearch(cari);
         data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
         
