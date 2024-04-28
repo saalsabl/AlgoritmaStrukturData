@@ -4,14 +4,19 @@ public class Utama01 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        Gudang01 gudang = new Gudang01(7);
+       // Gudang01 gudang = new Gudang01(7);
+
+       System.out.println("Masukkan kapasitas tumpukan barang : ");
+       int jumlah = s.nextInt();
+       Gudang01 gudang = new Gudang01(jumlah);
 
         while (true) {
             System.out.println("\nMenu : ");
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat tumpukan teratas");
+            System.out.println("5. Keluar");
             System.out.print("\nPilih : ");
             int pilih = s.nextInt();
             s.nextLine();
@@ -35,8 +40,9 @@ public class Utama01 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
+                    gudang.teratas();
                     break;
-
+                    
                 default:
                 System.out.println("Pilihan tidak valid. Silahkan coba lagi");
             }
