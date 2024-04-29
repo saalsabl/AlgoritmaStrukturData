@@ -110,5 +110,11 @@ public class Nasabah {
         return dt;
     }
 
-    
+    public void peekRear() {
+        if (!IsEmpty()) {
+            System.out.println("Antrian paling belakang: " + data[rear].norek + " " + data[rear].nama + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
+        } else {
+            System.out.println("Antrian masih kosong");
+        }
+    }
 }
