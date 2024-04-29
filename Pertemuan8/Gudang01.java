@@ -38,8 +38,8 @@ public class Gudang01 {
         if(!cekKosong()){
             Barang01 delete = tumpukan[top];
             top--;
-            System.out.println("Barang "+delete.nama+" diambil dari Gudang");
-            System.out.println("Kode unik dalam binder : " + konversiDesimalKeBiner(delete.kode));
+            System.out.println("Barang "+ delete.nama +" diambil dari Gudang");
+            System.out.println("Kode unik dalam biner : " + konversiDesimalKeBiner(delete.kode));
             return delete;
         } else {
             System.out.println("Tumpukan barang kosong");
@@ -59,8 +59,8 @@ public class Gudang01 {
 
     public void tampilkanBarang(){
         if(!cekKosong()){
-            System.out.println("Rincian tumpukan barang di Gudang");
-            for(int i = 0; i <= top; i++){
+            System.out.println("Rincian tumpukan barang di Gudang : ");
+            for(int i = 0; i >= top; i--){
                 System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama, tumpukan[i].kategori);
             }
         } else {
@@ -86,5 +86,44 @@ public class Gudang01 {
             biner += stack.pop();
         }
         return biner;
+    }
+
+    public Barang01 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang01 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah : " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong");
+            return null;
+        }
+    }
+
+    public boolean cariBarang (int kode) {
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].kode == kode) {
+                    System.out.println("Barang dengan kode " + kode + " berhasil ditemukan : " + tumpukan[i].nama);
+                    return true;
+                }
+            }
+            System.out.println("Barang dengan kode " + kode + " tidak ditemukan.");
+            return false;
+        } else {
+            System.out.println("Tumpukan barang kosong");
+            return false;
+        }
+    }
+
+    public Barang01 cariBarang (String kodeAtauNama) {
+        for (int i = 0; i <= top; i++) {
+            if (tumpukan[i].kode == Integer.parseInt(kodeAtauNama)) {
+                return tumpukan[i];
+            }
+            if (tumpukan[i].nama.equals(kodeAtauNama)) {
+                return tumpukan[i];
+            }
+        }
+        return null;
     }
 }
