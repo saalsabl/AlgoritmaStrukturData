@@ -37,7 +37,9 @@ public class SearchData {
     
     public void tampilData(String x, int pos){
         if(pos != -1){
-            System.out.println("");
+            System.out.println("Data : " + listDt[pos].data);
+       } else {
+        System.out.println("Data" + x + " tidak ditemukan");
        }
     }
 
@@ -49,7 +51,17 @@ public class SearchData {
         }
         return null;
     }
-
+    public void bubbleSort() {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 0; j < idx - i - 1; j++) {
+                if (listDt[j].data.compareToIgnoreCase(listDt[j + 1].data) > 0) {
+                    datauts temp = listDt[j];
+                    listDt[j] = listDt[j + 1];
+                    listDt[j + 1] = temp;
+                }
+            }
+        }
+    }
     public int FindBinarySearch(String cari) {
         bubbleSort();
         int left = 0;
@@ -57,7 +69,7 @@ public class SearchData {
         
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int result = listDt[mid].data.equals(cari);
+            int result = listDt[mid].data.compareToIgnoreCase(cari);
             if (result == 0) {
                 return mid;
             } else if (result < 0) {
@@ -68,6 +80,7 @@ public class SearchData {
         }
         return -1;
     }
+
 
     public ArrayList<Integer> FindAllSeqSearch(String cari){
         ArrayList<Integer> positions = new ArrayList<>();
