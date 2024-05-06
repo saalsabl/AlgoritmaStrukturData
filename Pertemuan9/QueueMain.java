@@ -41,6 +41,9 @@ public class QueueMain {
                 case 5:
                     Q.clear();
                     break;
+                default: 
+                System.out.println("Pilihan tidak valid! Program dihentikan.");
+                System.exit(1);
             }
         } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5 );
     }

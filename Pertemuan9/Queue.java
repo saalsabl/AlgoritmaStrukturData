@@ -36,9 +36,8 @@ public class Queue {
     }
 
     public void print() {
-        if (IsEmpty()) {
-            System.out.println("Queue masih kosong");
-        } else {
+        if (!IsEmpty()) {
+            System.out.println("Queue : ");
             int i = front;
             while (i != rear) {
                 System.out.print(data[i] + " ");
@@ -46,6 +45,8 @@ public class Queue {
             }
             System.out.println(data[i] + " ");
             System.out.println("Jumlah elemen = " + size);
+        } else {
+            System.out.println("Queue masih kosong");
         }
     }
 
@@ -59,39 +60,71 @@ public class Queue {
         }
     }
 
+    // public void Enqueue (int dt) {
+    //     if (IsFull()) {
+    //         System.out.println("Queue sudah penuh");
+    //     } else {
+    //         if (IsEmpty()) {
+    //             front = rear = 0;
+    //         } else {
+    //             if (rear == max - 1) {
+    //                 rear = 0;
+    //             } else {
+    //                 rear++;
+    //             }
+    //         }
+    //         data [rear] = dt;
+    //         size++;
+    //     }
+    // }
+
     public void Enqueue (int dt) {
         if (IsFull()) {
-            System.out.println("Queue sudah penuh");
+            System.out.println("Queue sudah penuh (queue overflow)! Tidak dapat menambahkan elemen baru.");
+            System.exit(1);
         } else {
             if (IsEmpty()) {
                 front = rear = 0;
             } else {
-                if (rear == max - 1) {
-                    rear = 0;
-                } else {
-                    rear++;
-                }
+                rear = (rear + 1) % max;
             }
             data [rear] = dt;
             size++;
         }
     }
 
+    // public int Dequeue() {
+    //     int dt = 0;
+    //     if (IsEmpty()) {
+    //         System.out.println("Queue masih kosong");
+    //     } else {
+    //         dt = data[front];
+    //         size--;
+    //         if (IsEmpty()) {
+    //             front = rear = -1;
+    //         } else {
+    //             if (front == max - 1) {
+    //                 front = 0;
+    //             } else {
+    //                 front++;
+    //             }
+    //         }
+    //     }
+    //     return dt;
+    // }
+
     public int Dequeue() {
         int dt = 0;
         if (IsEmpty()) {
-            System.out.println("Queue masih kosong");
+            System.out.println("Queue masih kosong (queue underflow)! Tidak dapat mengeluarkan elemen.");
+            System.exit(1);
         } else {
             dt = data[front];
             size--;
             if (IsEmpty()) {
                 front = rear = -1;
             } else {
-                if (front == max - 1) {
-                    front = 0;
-                } else {
-                    front++;
-                }
+                front = (front + 1) % max;
             }
         }
         return dt;
