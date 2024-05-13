@@ -42,3 +42,4 @@ Kode diatas digunakan dalam keadaan data selanjutnya merupakan key yang akan dih
 2. Buatlah implementasi program antrian layanan unit kemahasiswaan sesuai dengan kondisi yang ditunjukkan pada soal nomor 1! Ketentuan
     a. Implementasi antrian menggunakan Queue berbasis Linked List!
     b. Program merupakan proyek baru, bukan modifikasi dari soal nomor 1!
+<img src ="tugas.png">
