@@ -12,7 +12,6 @@ public class LinkedList {
             System.out.println("\nIsi Linked list");
 
             while (tmp != null) {
-                System.out.println("______________");
                 System.out.println("NIM  : " +tmp.nim + "\nNama : " +tmp.nama);
                 tmp = tmp.next;
             }
