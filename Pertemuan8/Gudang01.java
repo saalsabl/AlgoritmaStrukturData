@@ -1,10 +1,10 @@
 public class Gudang01 {
     Barang01[] tumpukan;
-    int size, top;
+    int size, top; //deklarasi
 
     public Gudang01(int kapasitas){
         size = kapasitas;
-        tumpukan = new Barang01[size];
+        tumpukan = new Barang01[size]; //inisialisasi
         top = -1;
     }
 
