@@ -160,5 +160,64 @@ public class BinaryTree01 {
             }
         }
     }
-}
+    // Tugas1
+    void add2 (int data) {
+        root = addRecursive(root, data);
+    }
 
+    Node01 addRecursive(Node01 current, int data) {
+        if (current == null) {
+            return new Node01(data);
+        }
+
+        if (data < current.data) {
+            current.left = addRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addRecursive(current.right, data);
+        }
+        
+        return current;
+    }
+
+    //Tugas2
+    void max() {
+        Node01 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.println(current.data);
+    }
+    void min() {
+        Node01 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.println(current.data);
+    }
+
+    //Tuags3
+    void displayLeaf(Node01 root) {
+        if (root!=null) {
+            if (root.left == null && root.right == null) {
+                System.out.print(root.data + " ");
+            }
+            displayLeaf(root.left);
+            displayLeaf(root.right);
+        }
+    }
+
+    //Tugas4
+    public int totalLeaf(Node01 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+            return 1;
+        }
+        int leftCount = totalLeaf(node.left);
+        int rightCount = totalLeaf(node.right);
+
+        return leftCount + rightCount;
+    }
+}

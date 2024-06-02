@@ -7,5 +7,15 @@ public class BinaryTreeArrayMain01 {
         System.out.print("\nInOrder Traversal : ");
         bta.traverseInOrder(0);
         System.out.println("\n");
+
+        System.out.println("-------------------------");
+        bta.add(90);
+        bta.add(72);
+        System.out.println("Method traverse PreOrder");
+        bta.traversePreOrder(0);
+        System.out.println();
+        System.out.println("Method traverse PostOrder");
+        bta.traversePostOrder(0);
+        System.out.println();
     }
 }

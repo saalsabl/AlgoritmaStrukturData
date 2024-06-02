@@ -26,6 +26,18 @@ public class BinaryTreeMain01 {
         System.out.println("PreOrder Traversal : ");
         bt.traversePreOrder(bt.root);
         System.out.println("");
+        System.out.println("------------------------------------");
+        System.out.println("Nilai terbesar : ");
+        bt.max();
+        System.out.println("Nilai Terkecil : ");
+        bt.min();
+        System.out.println("------------------------------------");
+        System.out.println("Menampilkan Data Leaf");
+        bt.displayLeaf(bt.root);
+        System.out.println();
+        System.out.print("Data Leaf : ");
+        int totalLeaf = bt.totalLeaf(bt.root);
+        System.out.println("\nJumlah leaf dalam tree : " + totalLeaf);
     }
     
 }
