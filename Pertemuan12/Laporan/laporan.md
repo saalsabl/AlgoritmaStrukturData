@@ -1,7 +1,7 @@
 # Laporan Praktikum Pertemuan 14 - Tree
 Nama            : Aaisyah Nursalsabiil 
 NIM             : 2341720171
-Kelas / absen   : 1h - TI / 01
+Kelas / absen   : 1H - TI / 01
 
 ## 13.2.1 Percobaan 1
 <img src="percobaan1.png">
