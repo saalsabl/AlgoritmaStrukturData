@@ -22,6 +22,7 @@ public class GraphMain01 {
         gdg.makeEdge(2, 1, 80);
         gdg.makeEdge(2, 3, 40);
         gdg.makeEdge(3, 1, 90);
+        System.out.println("\n---------------------------------------------------------------------------");
         gdg.printGraph();
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
