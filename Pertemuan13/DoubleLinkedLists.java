@@ -85,6 +85,21 @@ public class DoubleLinkedLists {
         size = 0;
     }
 
+    public void updateJarak(int tujuan, int jarakBaru) throws Exception {
+        Node01 current = head;
+        boolean found = false;
+        while (current != null) {
+            if (current.data == tujuan) {
+                current.jarak = jarakBaru;
+                found = true;
+                break;
+            }
+            current = current.next;
+        }
+        if (!found) {
+            throw new Exception("Tujuan tidak ditemukan dalam daftar");
+        }
+    }
     public void print() {
         if (!isEmpty()) {
             Node01 tmp = head;
