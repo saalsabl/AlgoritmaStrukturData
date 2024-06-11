@@ -421,4 +421,9 @@ public class GraphMatriks01 {
         return jumlahEdge;
     }
 }
-```
+``` 
+output :
+<img src="tugas1.png">
+<img src="tugas2.png">
+<img src="tugas3.png">
+<img src="tugas4.png">
