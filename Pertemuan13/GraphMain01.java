@@ -12,6 +12,7 @@ public class GraphMain01 {
         System.out.println("8. Keluar");
         System.out.println("-------------------------------");
     }
+
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
@@ -35,7 +36,7 @@ public class GraphMain01 {
                     int jarak = sc.nextInt();
                     gedung.addEdge(asal, tujuan, jarak);;
                     break;
-                
+
                 case 2:
                     System.out.print("Masukkan asal gedung yang akan dihapus : ");
                     asal = sc.nextInt();
@@ -84,17 +85,3 @@ public class GraphMain01 {
         } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5 || pilih == 6 || pilih == 7 || pilih == 8);
     }
 }
-
-        // gedung.addEdge(0, 1, 50);
-        // gedung.addEdge(0, 2, 100);
-        // gedung.addEdge(1, 3, 70);
-        // gedung.addEdge(2, 3, 40);
-        // gedung.addEdge(3, 4, 60);
-        // gedung.addEdge(4, 5, 80);
-        // gedung.degree(0);
-        // gedung.printGraph();
-
-        // gedung.removeEdge(1, 3);
-        // gedung.printGraph();
-
-        //Percobaan 2

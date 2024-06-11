@@ -1,41 +1,43 @@
 public class Graph01 {
     int vertex;
-    DoubleLinkedLists list[];
+    DoubleLinkedList list[];
 
     public Graph01(int v) {
         vertex = v;
-        list = new DoubleLinkedLists[v];
+        list = new DoubleLinkedList[v];
         for (int i = 0; i < v; i++) {
-            list[i] = new DoubleLinkedLists();
+            list[i] = new DoubleLinkedList();
         }
     }
 
     public void addEdge(int asal, int tujuan, int jarak) {
+        //directed
         list[asal].addFirst(tujuan, jarak);
-        // list[tujuan].addFirst(asal,jarak);
+        //undirected
+        //list[tujuan].addFirst(asal, jarak);
     }
 
     public void degree(int asal) throws Exception {
+        //undirected
+        //System.out.println("Degree dari gedung " + (char) ('A' + asal) + " : " +list[asal].size());
+        //directed
         int k, totalIn = 0, totalOut = 0;
         for (int i = 0; i < vertex; i++) {
-            // inDegree
+            //indegree
             for (int j = 0; j < list[i].size(); j++) {
                 if (list[i].get(j) == asal) {
                     ++totalIn;
                 }
             }
-            //outDegree
+            //outdegree
             for (k = 0; k < list[asal].size(); k++) {
                 list[asal].get(k);
             }
             totalOut = k;
         }
-        System.out.println("InDegree dari Gedung " + (char) ('A' +asal) + ": " + totalIn);
-        System.out.println("OutDegree dari Gedung " + (char) ('A' +asal) + ": " + totalOut);
-        System.out.println("Degree dari Gedung " + (char) ('A' +asal) + ": " + (totalIn + totalOut));
-        
-        // System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " + list[asal].size());
-        
+        System.out.println("InDegree dari Gedung " + (char) ('A' + asal) + " : " + totalIn);
+        System.out.println("OutDegree dari Gedung " + (char) ('A' + asal) + " : " + totalOut);
+        System.out.println("Degree dari Gedung " + (char) ('A' + asal) + " : " + (totalIn + totalOut));
     }
 
     public void removeEdge(int asal, int tujuan) throws Exception {
@@ -45,8 +47,8 @@ public class Graph01 {
             }
         }
     }
-    
-    public void removeAllEdges() {
+
+    public void removeAllEdge() {
         for (int i = 0; i < vertex; i++) {
             list[i].clear();
         }
@@ -99,6 +101,7 @@ public class Graph01 {
         for (int i = 0; i < vertex; i++) {
             jumlahEdge += list[i].size();
         }
+        System.out.println("Total edge dalam graf: " + jumlahEdge);
         return jumlahEdge;
     }
 }
